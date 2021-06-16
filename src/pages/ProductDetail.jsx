@@ -11,7 +11,7 @@ export default function ProductDetail() {
   useEffect(() => {
     let productService = new ProductService();
     productService.getByProductName(name).then((result) => setProduct(result.data.data));
-  }, []);
+  },[]);
 
   return (
     <div>
@@ -24,7 +24,7 @@ export default function ProductDetail() {
               src="https://react.semantic-ui.com/images/avatar/large/steve.jpg"
             />
             <Card.Header>{product.productName}</Card.Header>
-            <Card.Meta>{product.category.categoryName}</Card.Meta>
+            <Card.Meta>{product.category?.categoryName}</Card.Meta>
             <Card.Description>
               Steve wants to add you to the group <strong>best friends</strong>
             </Card.Description>
